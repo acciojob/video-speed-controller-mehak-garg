@@ -8,14 +8,36 @@
 <body>
 
   <div class="wrapper">
-    <video class="flex" width="765" height="430" src="http://clips.vorwaerts-gmbh.de/VfE_html5.mp4" controls></video>
+    <video class="flex" width="765" height="430" src="https://www.w3schools.com/html/mov_bbb.mp4" controls></video>
     <div class="speed">
       <div class="speed-bar">1×</div>
     </div>
+	  <div class="progress-container" id="progress-container">
+    <div class="progress-bar" id="progress-bar"></div>
+</div>
   </div>
 
 <script  src="./script.js">
   //Your code goes here
+	let x=document.querySelector(".flex");
+	 const progressContainer = document.getElementById('progress-container');
+    const progress__filled = document.getElementById('progress-bar');
+	x.addEventListener('timeupdate', () => {
+        const percent = (x.currentTime / x.duration) * 100;
+        progress__filled.style.width = percent + '%';
+    });
+	let player__button=document.createElement("button");
+	player__button.addEventListener("click",toggle);
+	function toggle(){
+		if(x.paused==="true")
+		{
+			x.play();
+		}
+		else{
+			x.pause();
+		}
+	}
+	let volume=
 </script>
 </body>
 </html>
