@@ -25,8 +25,8 @@
         const percent = (x.currentTime / x.duration) * 100;
         progress__filled.style.width = percent + '%';
     });
-	progress__filled.style.height=50px;
-	progress__filled.style.backgroundColor=blue;
+	progress__filled.style.height="50px";
+	progress__filled.style.backgroundColor="blue";
      const player__button2=document.querySelector(".toggle");
 	player__button2.addEventListener("click",toggle);
 	function toggle(){
@@ -38,9 +38,26 @@
 			x.pause();
 		}
 	}
-	  let volume1=document.querySelector("volume");
+	  let volume1=document.querySelector(".volume");
 	  x.volume=volume1.value.trim;
-	
+	  let volume2=document.querySelector(".playbackSpeed");
+	  x.volume=volume2.value.trim;
+	  let z=document.querySelector(".rewind");
+	  z.addEventListener("click",rewind_10s);
+	  function rewind_10s(){
+		  if(x.currentTime<10){
+			  x.currentTime=0;
+		  }
+		  else{
+		  x.currentTime-=10;
+		  }
+	      }
+	  let a=document.querySelector(".forward")
+	   a.addEventListener("click",forward_25s);
+	  function forward_25s(){
+		  {
+		  x.currentTime+=25;
+	      }
 </script>
 </body>
 </html>
