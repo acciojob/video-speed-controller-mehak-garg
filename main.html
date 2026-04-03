@@ -27,14 +27,17 @@
     });
 	progress__filled.style.height="50px";
 	progress__filled.style.backgroundColor="blue";
+	  
      const player__button2=document.querySelector(".toggle");
 	player__button2.addEventListener("click",toggle);
+	  
 	function toggle(){
 		if(x.paused)
-		{
+		{player__button2.innerHTML= "►";
 			x.play();
 		}
 		else{
+			player__button2.innerHTML= "❚ ❚";
 			x.pause();
 		}
 	}
