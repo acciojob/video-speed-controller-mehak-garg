@@ -39,9 +39,17 @@
 		}
 	}
 	  let volume1=document.querySelector(".volume");
-	  x.volume=volume1.value.trim;
+	  volume1.addEventListener("input",event);
+	  function event(e){
+	  x.volume=e.target.value;
+	}
+	   
 	  let volume2=document.querySelector(".playbackSpeed");
-	  x.volume=volume2.value.trim;
+	  volume2.addEventListener("input",event1);
+	  function event1(e){
+	  x.playbackRate=e.target.value;
+	}
+	   
 	  let z=document.querySelector(".rewind");
 	  z.addEventListener("click",rewind_10s);
 	  function rewind_10s(){
@@ -55,7 +63,7 @@
 	  let a=document.querySelector(".forward")
 	   a.addEventListener("click",forward_25s);
 	  function forward_25s(){
-		  {
+		  
 		  x.currentTime+=25;
 	      }
 </script>
